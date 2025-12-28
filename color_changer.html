@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+.main {
+  text-align: center;
+  padding: 2rem;
+  background: rgb(225, 231, 231);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: rgb(210, 230, 230);
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div class="main">
+        <h1>Color_changer</h1>
+        <p>color Code: <Span id="color">#ffff</Span></p>
+        <button id="Color_btn">Change color</button>
+    </div>
+    <script>
+
+const color = document.getElementById('color');
+const Color_btn =document.getElementById('Color_btn')
+const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+
+function getRandomColor() {
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
+Color_btn.addEventListener("click", function () {
+  const randomColor = getRandomColor();
+  document.body.style.backgroundColor = randomColor;
+  colorText.textContent = randomColor;
+});
+
+
+
+    </script>
+</body>
+</html>
